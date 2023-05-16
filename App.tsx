@@ -1,20 +1,49 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Provider as PaperProvider } from 'react-native-paper';
+
+import { StateContext } from './src/context/StateContext';
+
+import { theme } from './src/utils/theme';
+
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+
+//Screens
+import { Home, Entry, List } from './src/screens';
+
+//Components
+import { FocusedStatusBar, Navbar } from './src/components';
+import { State } from 'react-native-gesture-handler';
+
+const Stack = createStackNavigator();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+	return (
+		<StateContext>
+			<PaperProvider theme={theme}>
+				<NavigationContainer>
+					<FocusedStatusBar backgroundColor={theme.colors.primary} />
+					<View style={styles.container}>
+						<Stack.Navigator
+							screenOptions={{
+								headerShown: false,
+							}}
+						>
+							<Stack.Screen name='Home' component={Home} />
+							<Stack.Screen name='Entry' component={Entry} />
+							<Stack.Screen name='List' component={List} />
+						</Stack.Navigator>
+					</View>
+					<Navbar />
+				</NavigationContainer>
+			</PaperProvider>
+		</StateContext>
+	);
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+	container: {
+		flex: 1,
+		marginTop: 30,
+	},
 });
