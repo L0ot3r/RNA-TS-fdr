@@ -12,9 +12,9 @@ const Entry = () => {
 				<Text style={styles.title}>
 					Ajouter une entrée
 				</Text>
-				<View style={styles.content}>
+				<ScrollView style={styles.content}>
 					<Form />
-				</View>
+				</ScrollView>
 			</View>
 		</SafeAreaView>
 	);

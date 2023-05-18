@@ -11,6 +11,9 @@ import { styles } from './FormStyles';
 
 import { useState } from 'react';
 import { useStateContext, ClassEntry } from '../../context/StateContext';
+import { set } from 'mongoose';
+
+// import { createEntry } from '../../actions/entries'
 
 const Form = () => {
 	const navigation = useNavigation<any>();
@@ -19,6 +22,7 @@ const Form = () => {
 		heure,
 		kilometre,
 		today,
+		formEntry,
 		setTitre,
 		setHeure,
 		setKilometre,
@@ -65,6 +69,7 @@ const Form = () => {
 		const entry = new ClassEntry(today, titre, heure, kilometre);
 		setList([...list, entry]);
 		setFormEntry(entry);
+		// createEntry(entry);
 		handleReset();
 		navigation.navigate('List');
 	};

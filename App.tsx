@@ -13,7 +13,6 @@ import { Home, Entry, List } from './src/screens';
 
 //Components
 import { FocusedStatusBar, Navbar } from './src/components';
-import { State } from 'react-native-gesture-handler';
 
 const Stack = createStackNavigator();
 

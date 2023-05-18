@@ -8,6 +8,9 @@ import { useStateContext } from '../../context/StateContext';
 const List = () => {
 	const { list } = useStateContext();
 
+	console.log(list);
+	
+
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
 			<View style={styles.container}>

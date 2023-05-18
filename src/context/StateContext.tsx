@@ -1,6 +1,4 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
-import { set } from 'react-native-reanimated';
-
 
 export interface IStateContext {
   titre: string;
@@ -12,7 +10,7 @@ export interface IStateContext {
   setKilometre: (kilometre: string) => void;
   setToday: (today: string) => void;
   formEntry: IEntry;
-  setFormEntry: (formEntry: {}) => void;
+  setFormEntry: (formEntry: IEntry) => void;
   list: IEntry[];
   setList: (list: IEntry[]) => void;
 }
@@ -41,7 +39,7 @@ export const StateContext = ({ children }: {children: ReactNode}) => {
 	const [heure, setHeure] = useState<string>('');
 	const [kilometre, setKilometre] = useState<string>('');
 	const [today, setToday] = useState<string>('');
-  const [formEntry, setFormEntry] = useState({});
+  const [formEntry, setFormEntry] = useState<IEntry>({} as IEntry);
   const [list, setList] = useState<IEntry[]>([]);
 
   const stateContextData: IStateContext = {
@@ -63,6 +61,5 @@ export const StateContext = ({ children }: {children: ReactNode}) => {
     <Context.Provider value={stateContextData}>{children}</Context.Provider>
   );
 };
-
 
 export const useStateContext = () => useContext(Context);

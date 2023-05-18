@@ -4,11 +4,9 @@ import { useNavigation } from '@react-navigation/native';
 
 import { styles } from './NavbarStyles';
 
-import { Icons } from '../../assets/Icons'
-
+import { Icons } from '../../assets/Icons';
 
 const Navbar = () => {
-
 	const navigation = useNavigation<any>();
 
 	return (
