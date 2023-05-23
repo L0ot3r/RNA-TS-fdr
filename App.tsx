@@ -1,12 +1,12 @@
 import { StyleSheet, View } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
 
-import { StateContext } from './src/context/StateContext';
-
-import { theme } from './src/utils/theme';
-
+// Navigation
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+
+import { StateContext } from './src/context/StateContext';
+import { theme } from './src/utils/theme';
 
 //Screens
 import { Home, Entry, List } from './src/screens';

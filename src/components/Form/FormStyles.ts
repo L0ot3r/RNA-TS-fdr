@@ -63,7 +63,7 @@ export const styles = StyleSheet.create({
     color: '#000',
     textAlign: 'center',
   },
-  today: {
+  day: {
     color: '#000',
     textAlign: 'left',
     fontWeight: 'bold',

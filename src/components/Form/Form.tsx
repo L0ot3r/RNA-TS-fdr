@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
 	View,
 	Text,
@@ -9,24 +10,21 @@ import { useNavigation } from '@react-navigation/native';
 
 import { styles } from './FormStyles';
 
-import { useState } from 'react';
-import { useStateContext, ClassEntry } from '../../context/StateContext';
-import { set } from 'mongoose';
-
-// import { createEntry } from '../../actions/entries'
+import { useStateContext } from '../../context/StateContext';
+import { ClassEntry } from '../../utils/constants/class';
 
 const Form = () => {
 	const navigation = useNavigation<any>();
+	
 	const {
 		titre,
 		heure,
 		kilometre,
-		today,
-		formEntry,
+		day,
 		setTitre,
 		setHeure,
 		setKilometre,
-		setToday,
+		setDay,
 		setFormEntry,
 		list,
 		setList,
@@ -65,11 +63,11 @@ const Form = () => {
 		setShowResult(false);
 	};
 
+
 	const handleSave = () => {
-		const entry = new ClassEntry(today, titre, heure, kilometre);
+		const entry = new ClassEntry(day, titre, heure, kilometre);
 		setList([...list, entry]);
 		setFormEntry(entry);
-		// createEntry(entry);
 		handleReset();
 		navigation.navigate('List');
 	};
@@ -112,7 +110,7 @@ const Form = () => {
 				style={styles.button}
 				onPress={() => {
 					handleShow();
-					setToday(getToday());
+					setDay(getToday());
 				}}
 			>
 				<Text style={styles.buttonText}>Valider</Text>
@@ -120,7 +118,7 @@ const Form = () => {
 
 			{showResult && (
 				<View style={styles.divResult}>
-					<Text style={styles.today}>{today}</Text>
+					<Text style={styles.day}>{day}</Text>
 					<View style={styles.divRow}>
 						<Text style={styles.resultText}>{titre}</Text>
 						<Text style={styles.resultText}>{heure}</Text>

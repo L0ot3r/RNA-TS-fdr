@@ -6,11 +6,11 @@ export const styles = StyleSheet.create({
     height: '100%',
   },
   title: {
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: 'bold',
     color: '#ff6060',
     justifyContent: 'flex-start',
-    marginBottom: 50
+    marginBottom: 30
   },
   content: {
     width: '100%',
@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
     color: '#000',
     textAlign: 'center',
   },
-  today: {
+  day: {
     color: '#000',
     textAlign: 'left',
     fontWeight: 'bold',
