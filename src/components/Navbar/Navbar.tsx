@@ -11,15 +11,6 @@ const Navbar = () => {
 
 	return (
 		<View style={styles.nav}>
-			<TouchableOpacity
-				onPress={() => {
-					if (navigation.canGoBack()) {
-						navigation.goBack();
-					}
-				}}
-			>
-				<Text style={styles.iconNav}>{Icons.Back}</Text>
-			</TouchableOpacity>
 			<TouchableOpacity onPress={() => navigation.navigate('Home')}>
 				<Text style={styles.iconNav}>{Icons.Home}</Text>
 			</TouchableOpacity>

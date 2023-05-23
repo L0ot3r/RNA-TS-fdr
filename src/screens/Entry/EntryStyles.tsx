@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     height: '100%',
   },
   title: {
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: 'bold',
     color: '#ff6060',
     marginBottom: 50
