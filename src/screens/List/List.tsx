@@ -6,7 +6,6 @@ import { styles } from './ListStyles';
 
 import { useStateContext } from '../../context/StateContext';
 
-
 const List = () => {
 	const { list, fetchData } = useStateContext();
 

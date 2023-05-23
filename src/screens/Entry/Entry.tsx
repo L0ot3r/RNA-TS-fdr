@@ -9,9 +9,7 @@ const Entry = () => {
 	return (
 		<SafeAreaView>
 			<View style={styles.container}>
-				<Text style={styles.title}>
-					Ajouter une entrée
-				</Text>
+				<Text style={styles.title}>Ajouter une entrée</Text>
 				<ScrollView style={styles.content}>
 					<Form />
 				</ScrollView>

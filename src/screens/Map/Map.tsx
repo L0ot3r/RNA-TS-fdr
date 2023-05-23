@@ -4,10 +4,7 @@ import MapView from 'react-native-maps';
 
 import { styles } from './MapStyles';
 
-
-
 const MyMap = () => {
-
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
 			<View style={styles.container}>

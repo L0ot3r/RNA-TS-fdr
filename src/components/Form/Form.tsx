@@ -15,7 +15,7 @@ import { ClassEntry } from '../../utils/constants/class';
 
 const Form = () => {
 	const navigation = useNavigation<any>();
-	
+
 	const {
 		titre,
 		heure,
@@ -62,7 +62,6 @@ const Form = () => {
 		setKilometre('');
 		setShowResult(false);
 	};
-
 
 	const handleSave = () => {
 		const entry = new ClassEntry(day, titre, heure, kilometre);

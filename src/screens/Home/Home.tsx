@@ -4,7 +4,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './HomeStyles';
 
 const Home = () => {
-
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
 			<View style={styles.container}>
