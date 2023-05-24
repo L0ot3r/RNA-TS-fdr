@@ -12,6 +12,7 @@ export interface IStateContext {
 	list: IEntry[];
 	setList: (list: IEntry[]) => void;
 	fetchData: () => void;
+	encodeQueryString: (params: any) => string;
 }
 
 export interface IEntry {
